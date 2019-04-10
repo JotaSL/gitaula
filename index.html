@@ -1,0 +1,40 @@
+<head>
+	<title>Colinha</title>
+	<style type="text/css">
+	img{ position: static; } // 1 posicinamento static (Estatico)
+	#div2 { 
+			position: relative;
+			top: 50px
+			left: 250;
+			z-index: 2;  } // 2 posicinamento relative (relativo)
+    #menu {
+    	background-color: black;
+    	position: fixed;
+    	top: 0;
+    	left: 0; // 3 posicinamento fixed (fixo)
+    }
+    #img2 {
+    	position: fixed;
+    	top: 50px;
+    	left: 500px;
+    	z-index: 3;
+    }
+    #div3 {
+    	position: absolute;
+    	top: 50px;
+    	left: 50px;
+    	z-index: 4;
+    	background-color: red; // 4 posicinamento absolute (absoluto)
+    }
+    </style> 
+</head>
+<body>
+<img src="imagem/css3.png"> // 1 posicinamento static (Estatico)
+<div id="div2">Posicionamento relativo</div> // 2 posicinamento relative (relativo)
+<div id="menu">Posicionamento fixo</div> 
+HOME | Rias | Issei <br></br>
+<img2 src="imagem2/css3.png"> // 3 posicinamento fixed (fixo)
+<div id="div3">Posicionamento absoluto</div> // 4 posicinamento absolute (absoluto)
+</body>
+// (z-index: X;) posicinamento do plano da imagem ou texto
+// (float: left,top,right) posicionamento das div de modo lateral
