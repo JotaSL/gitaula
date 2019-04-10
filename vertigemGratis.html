@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BIRI BIRI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            background-color: black;
+
+        }
+        .squareW{
+            width: 50px;
+            height: 50px;
+            background-color: #977;
+            position: fixed; 
+            transform: translate(75px,75px);
+            filter: drop-shadow(0px 0px 15px #977);
+        }
+        .square{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            transition:0.04s;
+            position: fixed;
+            margin: calc(24% - 100px) calc(50% - 100px);
+            transform: rotateZ(25deg)  scale(0,0);
+        }
+    </style>
+</head>
+<body>
+    <div id="square" class="square"><div id="squareW" class="squareW"></div></div>
+    <script>
+        var roll = 0;
+        var size = 0.1;
+        var cor = 999;
+        setInterval(() => {
+            document.getElementById("square").style.transform = "scale("+size+","+size+") rotateZ("+roll+"deg)";
+            roll += 10;
+            size += 0.1 * (size + 1);    
+        }, 50);
+        setInterval(() => {
+            document.getElementById("square").style.transition = "0s";
+            document.getElementById("square").style.transform = "scale(0,0) rotateZ(0deg)";
+            document.body.style.backgroundColor = "#" + cor;
+            document.getElementById("square").style.filter = "filter: drop-shadow(0px 0px 15px #"+(cor)+")";
+            document.getElementById("squareW").style.backgroundColor = "#" + (cor - 22);
+            document.getElementById("squareW").style.filter = "filter: drop-shadow(0px 0px 15px #"+(cor - 22)+")";
+            cor -= 22;
+            roll = 0;
+            size =0.1; 
+            setTimeout(() => {
+                document.getElementById("square").style.transition = "1s";
+            }, 40);   
+        }, 2750);
+    </script>
+</body>
+</html>
